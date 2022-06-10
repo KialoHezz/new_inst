@@ -1,0 +1,24 @@
+
+
+
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" href="{% url 'homepage' %}">Home</a>
+  </li>
+  {% if user.is_authenticated %}
+  <li class="nav-item">
+   <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+ </li>
+  <li class="nav-item">
+   <a class="nav-link" href="{% url 'logout' %}">logout</a>
+  </li>
+  {% else %}
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'login' %}">login</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'register' %}">register</a>
+  </li>
+  {% endif %}
+  
+</ul>

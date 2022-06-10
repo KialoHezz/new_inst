@@ -1,0 +1,19 @@
+{% extends "base/base.html" %} {% block body %}
+  <div class="card w-25 m-5 ">
+      {% for posts in post %}
+      <img class="rounded-circle" src="{{posts.author.profile.image.url}}" alt="">
+    <div class="card-header">{{posts.title}}</div>
+    <div class="card-body">
+      <h5 class="card-title">{{posts.date_posted | date:"F d, Y"}}</h5>
+      <h5 class="card-title">{{posts.author}}</h5>
+      <p class="card-text">
+       {{posts.content}}
+      </p>
+      <a href="#" class="btn btn-primary">click here</a>
+
+      {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}
